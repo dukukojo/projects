@@ -1,0 +1,149 @@
+:root {
+    --cyan: hsl(179, 62%, 43%);
+    --bright-yellow: hsl(71, 73%, 54%);
+    --light-gray: hsl(204, 43%, 93%);
+    --grayish-blue: hsl(218, 22%, 67%);
+    --light-green: #67b1b0;
+    --light-weight: 400;
+    --heavy-weight: 700;
+    --container-padding: 2rem 4rem;
+    --border-radius: 0.7rem;
+}
+
+/* general styling */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+/* @font-face {
+    font-family: 'Raleway';
+    src: url(../fonts/Raleway-ExtraLight.ttf) format('ttf'),
+        url(../fonts/Raleway-ExtraLight.ttf) format('ttf');
+    font-weight: 200;
+} */
+
+body {
+    padding: 0;
+    margin: 0;
+    /* font-family: 'Raleway'; */
+    /* height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+/* end of general styling */
+
+main {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content {
+    width: 70rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 300px;
+    grid-template-areas: 
+        'community community'
+        'monthly-subscription why-us';
+    box-shadow: 0 0 0 0 10px;
+    /* box-sizing: border-box; */
+}
+
+
+
+.community {
+    grid-area: community;
+    background-color: var(--light-gray);
+    padding: var(--container-padding);
+    border-top-left-radius: 0.7rem;
+    border-top-right-radius: 0.7rem;
+}
+
+.community-h1 {
+    color: var(--cyan);
+    font-size: 2rem;
+    letter-spacing: 0.05rem;
+    /* padding-bottom: 0; */
+}
+
+.community-h2 {
+    color: var(--bright-yellow);
+    font-size: 1.7rem;
+}
+
+.community-paragraph {
+    color: var(--grayish-blue);
+    font-size: 1.5rem;
+    line-height: 25px;
+}
+
+.monthly-subscription {
+    grid-area: monthly-subscription;
+    background-color: var(--cyan);
+    color: var(--light-gray);
+    padding: var(--container-padding);
+    font-size: 1.5rem;
+    border-bottom-left-radius: 0.7rem;
+}
+
+.price {
+    position: relative;
+}
+
+.money {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.per-month {
+    position: absolute;
+    top: 8px;
+    margin-left: 1rem;
+    color: #d1d1d1;
+}
+
+button {
+    width: 26rem;
+    height: 5rem;
+    background-color: var(--bright-yellow);
+    border: none;
+    color: var(--light-gray);
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin: 3rem 0;
+    border-radius: var(--border-radius);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.why-us {
+    grid-area: why-us;
+    background-color: var(--light-green);
+    padding: var(--container-padding);
+    color: var(--light-gray);
+    font-size: 1.5rem;
+    line-height: 25px;
+    border-bottom-right-radius: 0.7rem;
+}
+
+@media only screen and (max-width: 550px) {
+    .main-content {
+        height: 90vh;
+        width: 90vw;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+            'community'
+            'monthly-subscription'
+            'why-us'
+        ;
+    }
+}
+/* responsive is perfect on iphone xs max */
+/* from iphone 5 - x and xs doesn't look well. if it doesn't work well on iphone 5 then i have a problem */
